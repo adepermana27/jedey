@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "node-telegram-bot-api": "^0.66.0",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "pm2": "^6.0.8"
   }
 }
