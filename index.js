@@ -14,10 +14,13 @@ bot.on('channel_post', async (msg) => {
   const nickname = msg.author_signature == 'dey' ? 'ayahh' : msg.author_signature == 'jey' ? 'bundaaa sayaangg' : ''
 
   // Normalisasi pesan (biar gak peka kapital & spasi ekstra)
-  const normalizedMessage = userMessage.toLowerCase().trim();
+  const normalizedMessage = userMessage?.toLowerCase().trim();
   
   const regexRules = [
     { pattern: /\b(hai+|halo+|hello+)\b/i, response: `alooo ${nickname}..` },
+    { pattern: /\b(morning+)\b/i, response: `morningg too ${nickname}..` },
+    { pattern: /\b(afternoon+)\b/i, response: `afternoon too ${nickname}..` },
+    { pattern: /\b(eveningg+)\b/i, response: `eveningg too ${nickname}..` },
     { pattern: /\b(makasih+|terima\s+kasih|thanks|thx|maaci+|makasi+)\b/i, response: `sama-sama ${nickname} 😇` },
     { pattern: /\b(bye|dadah|sampai\s+jumpa+|babay+)\b/i, response: `dadah ${nickname} 🥺 sampai ketemu lagi yaa` },
     { pattern: /\b(bodoh|goblok|anjing|bangsat|ajg|anj|gblk)\b/i, response: `jangan marah-marah dong ${nickname} 😢` },
